@@ -1,5 +1,10 @@
 package jar;
 
+/**
+ * Clase del estado Programado, en el que al menos hay una alarma activada.
+ * @author Jesús y Jaime
+ *
+ */
 public class Programado extends AlarmaState {
 
 	public void nuevaAlarma(ControladorAlarma context) {

@@ -2,6 +2,11 @@ package jar;
 
 import java.util.*;
 
+/**
+ * Clase que define la Alarma
+ * @author Jesús y Jaime
+ *
+ */
 public class Alarma {
 
 	private String id; // Id de la alarma
