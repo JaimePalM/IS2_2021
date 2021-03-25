@@ -2,7 +2,7 @@ package jar;
 
 public class Programado extends AlarmaState {
 
-	public void nuevaAlarma(Alarma context) {
+	public void nuevaAlarma(ControladorAlarma context) {
 		this.exitAction(context);
 		AlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
@@ -10,7 +10,7 @@ public class Programado extends AlarmaState {
 		estadoProgramado.doAction(context);
 	}
 	
-	public void alarmaOn(Alarma context) {
+	public void alarmaOn(ControladorAlarma context) {
 		this.exitAction(context);
 		AlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
@@ -19,7 +19,7 @@ public class Programado extends AlarmaState {
 	}
 	
 
-	public void alarmaOff(Alarma context) {
+	public void alarmaOff(ControladorAlarma context) {
 		this.exitAction(context);
 		AlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
@@ -27,7 +27,7 @@ public class Programado extends AlarmaState {
 		estadoProgramado.doAction(context);
 	}
 	
-	public void borraAlarma(Alarma context) {
+	public void borraAlarma(ControladorAlarma context) {
 		this.exitAction(context);
 		AlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
