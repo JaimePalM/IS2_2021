@@ -1,12 +1,12 @@
 package jar;
 
-public class AlarmaState {
+public abstract class ControladorAlarmaState {
 	
-	private static Programado estadoProgramado;
-	private static Desprogramado estadoDesprogramado;
-	private static Sonando estadoSonando;
+	private static Programado estadoProgramado = new Programado();
+	private static Desprogramado estadoDesprogramado = new Desprogramado();
+	private static Sonando estadoSonando = new Sonando();
 
-	public static AlarmaState init(ControladorAlarma context) {
+	public static ControladorAlarmaState init(ControladorAlarma context) {
 		estadoDesprogramado.entryAction(context);
 		return estadoDesprogramado;
 	}
@@ -18,7 +18,7 @@ public class AlarmaState {
 	public void exitAction(ControladorAlarma context) {}
 	
 	
-	// Señales que emodifican el contexto de la alarma
+	// Señales que modifican el contexto de la alarma
 	public void nuevaAlarma(ControladorAlarma context) {}
 	public void borraAlarma(ControladorAlarma context) {}
 	public void apagar(ControladorAlarma context) {}

@@ -5,11 +5,14 @@ package jar;
  * @author Jesús y Jaime
  *
  */
-public class Programado extends AlarmaState {
+public class Programado extends ControladorAlarmaState {
 
+	
+	
+	
 	public void nuevaAlarma(ControladorAlarma context) {
 		this.exitAction(context);
-		AlarmaState estadoProgramado = getEstadoProgramado();
+		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 		estadoProgramado.doAction(context);
@@ -17,7 +20,7 @@ public class Programado extends AlarmaState {
 	
 	public void alarmaOn(ControladorAlarma context) {
 		this.exitAction(context);
-		AlarmaState estadoProgramado = getEstadoProgramado();
+		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 		estadoProgramado.doAction(context);
@@ -26,20 +29,21 @@ public class Programado extends AlarmaState {
 
 	public void alarmaOff(ControladorAlarma context) {
 		this.exitAction(context);
-		AlarmaState estadoProgramado = getEstadoProgramado();
+		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 		estadoProgramado.doAction(context);
 	}
 	
 	public void borraAlarma(ControladorAlarma context) {
-		this.exitAction(context);
-		AlarmaState estadoProgramado = getEstadoProgramado();
-		context.setState(estadoProgramado);
-		estadoProgramado.entryAction(context);
-		estadoProgramado.doAction(context);
+		if (context.alarmasActivadas().isEmpty()) {
+			this.exitAction(context);
+			ControladorAlarmaState estadoDesprogramado = getEstadoDesprogramado();
+			context.setState(estadoDesprogramado);
+			estadoDesprogramado.entryAction(context);
+			estadoDesprogramado.doAction(context);
+		}
 	}
-	
 	
 	
 	

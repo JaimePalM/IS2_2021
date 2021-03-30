@@ -5,7 +5,7 @@ package jar;
  * @author Jesús y Jaime
  *
  */
-public class Desprogramado extends AlarmaState {
+public class Desprogramado extends ControladorAlarmaState {
 
 	/**
 	 * Cuando se crea una alarma, al activarse por defecto,
@@ -13,11 +13,26 @@ public class Desprogramado extends AlarmaState {
 	 */
 	public void nuevaAlarma(ControladorAlarma context) {
 		this.exitAction(context);
-		AlarmaState estadoProgramado = getEstadoProgramado();
+		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 		estadoProgramado.doAction(context);
 	}
+	
+	/**
+	 * Cuando se activa una alarma, se pasa a Programado
+	 */
+	public void alarmaOn(ControladorAlarma context) {
+		this.exitAction(context);
+		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
+		context.setState(estadoProgramado);
+		estadoProgramado.entryAction(context);
+		estadoProgramado.doAction(context);
+	}
+	
+	/*
+	public void borrarAlarma(ControladorAlarma context)
+	 */
 	
 	
 }
