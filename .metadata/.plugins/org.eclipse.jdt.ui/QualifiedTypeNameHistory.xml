@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.TimerTask"/>
+<fullyQualifiedTypeName name="jar.Sonando.ExpiraTiempoTask"/>
+<fullyQualifiedTypeName name="java.util.Timer"/>
+<fullyQualifiedTypeName name="jar.Sonando.ApagaAlarmaTask"/>
+<fullyQualifiedTypeName name="jar.Alarma"/>
+<fullyQualifiedTypeName name="jar.AlarmaState"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+<fullyQualifiedTypeName name="jar.Programado"/>
+<fullyQualifiedTypeName name="jar.Desprogramado"/>
+<fullyQualifiedTypeName name="jar.Sonando"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="jar.ControladorAlarmaState"/>
+<fullyQualifiedTypeName name="jar.ControladorAlarma"/>
+</qualifiedTypeNameHistroy>
