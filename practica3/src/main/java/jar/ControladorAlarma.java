@@ -32,23 +32,25 @@ public class ControladorAlarma {
 	}
 
 	// Señales
-	public void nuevaAlarma(String id, Date hora) {
-		anhadeAlarma(new Alarma(id, hora));
+	public void nuevaAlarma(ControladorAlarma context, String id, Date hora) {
+		context.anhadeAlarma(new Alarma(id, hora));
 	}
-	public void borraAlarma() {
-		state.borraAlarma(this);
+	
+	public void borraAlarma(ControladorAlarma context, String id) {
+		eliminaAlarma(alarma(id));
 	}
-	public void apagar() {
-		state.apagar(this);
-	}
-	public void alarmaOff() {
-		state.alarmaOff(this);
-	}
-	public void alarmaOn() {
-		state.alarmaOn(this);
+	
+	public void apagar(ControladorAlarma context) { }
+	
+	public void alarmaOff(ControladorAlarma context, String id) {
+		desactivaAlarma(alarma(id));
 	}
 
-	// Metodos
+	public void alarmaOn(ControladorAlarma context, String id) {
+		activaAlarma(alarma(id));
+	}
+
+	// Métodos
 	public Alarma alarma(String id) {
 
 		if (alarmasDesactivadas.containsKey(id))

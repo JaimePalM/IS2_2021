@@ -13,7 +13,9 @@ public class Sonando extends ControladorAlarmaState {
 	protected Timer timer = new Timer();
 	protected ApagaAlarmaTask apagaAlarmaTask;
 	
-	// Arranca el timer
+	/**
+	 * Arranca el timer para salir de Sonando
+	 */
 	public void entryAction(ControladorAlarma context) {
 		context.activarMelodia();
 		// Configura el temporizador para apagar la alarma
@@ -21,10 +23,16 @@ public class Sonando extends ControladorAlarmaState {
 		timer.schedule(apagaAlarmaTask, ControladorAlarma.INTERVALO_SONAR);
 	}
 	
+	/**
+	 * Desactiva la melodia al salir de Sonando
+	 */
 	public void exitAction(ControladorAlarma context) {
 		context.desactivarMelodia();
 	}
 	
+	/**
+	 * Apaga la alarma y sale de Sonando
+	 */
 	public void apagar(ControladorAlarma context) {
 		this.exitAction(context);
 		// Cancela el temporizador

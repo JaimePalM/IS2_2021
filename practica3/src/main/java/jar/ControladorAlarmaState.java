@@ -1,5 +1,7 @@
 package jar;
 
+import java.util.Date;
+
 public abstract class ControladorAlarmaState {
 	
 	private static Programado estadoProgramado = new Programado();
@@ -19,22 +21,22 @@ public abstract class ControladorAlarmaState {
 	
 	
 	// Señales que modifican el contexto de la alarma
-	public void nuevaAlarma(ControladorAlarma context) {}
-	public void borraAlarma(ControladorAlarma context) {}
+	public void nuevaAlarma(ControladorAlarma context, String id, Date hora) {}
+	public void borraAlarma(ControladorAlarma context, String id) {}
 	public void apagar(ControladorAlarma context) {}
-	public void alarmaOff(ControladorAlarma context) {}
-	public void alarmaOn(ControladorAlarma context) {}
+	public void alarmaOff(ControladorAlarma context, String id) {}
+	public void alarmaOn(ControladorAlarma context, String id) {}
 
 	// Getters
-	public static Programado getEstadoProgramado() {
+	public static ControladorAlarmaState getEstadoProgramado() {
 		return estadoProgramado;
 	}
 
-	public static Desprogramado getEstadoDesprogramado() {
+	public static ControladorAlarmaState getEstadoDesprogramado() {
 		return estadoDesprogramado;
 	}
 
-	public static Sonando getEstadoSonando() {
+	public static ControladorAlarmaState getEstadoSonando() {
 		return estadoSonando;
 	}
 
