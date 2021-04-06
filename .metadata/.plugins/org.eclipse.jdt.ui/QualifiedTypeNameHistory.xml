@@ -19,4 +19,7 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="jar.ControladorAlarmaState"/>
 <fullyQualifiedTypeName name="jar.ControladorAlarma"/>
+<fullyQualifiedTypeName name="practica3.ControladorAlarma"/>
+<fullyQualifiedTypeName name="practica3.ControladorAlarmaState"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
 </qualifiedTypeNameHistroy>

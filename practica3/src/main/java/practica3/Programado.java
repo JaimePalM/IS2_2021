@@ -1,9 +1,8 @@
 package practica3;
 
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import practica3.Sonando.ApagaAlarmaTask;
 
 /**
  * Clase del estado Programado, en el que al menos hay una alarma activada.
@@ -13,30 +12,52 @@ import practica3.Sonando.ApagaAlarmaTask;
 public class Programado extends ControladorAlarmaState {
 
 	protected Timer timer = new Timer();
-	protected SuenaAlarmaTask suenaAlarmaTask;
-	
+	protected SuenaAlarmaTask suenaAlarmaTask = new SuenaAlarmaTask(null);
+
 	public void entryAction(ControladorAlarma context) {
 		if (context.alarmasActivadas().isEmpty()) {
 			ControladorAlarmaState estadoDesprogramado = getEstadoDesprogramado();
 			context.setState(estadoDesprogramado);
+		} else {
+			// Configura el temporizador para hacer sonar la alarma
+			suenaAlarmaTask.cancel();
+			suenaAlarmaTask = new SuenaAlarmaTask(context);
+			timer.schedule(suenaAlarmaTask, context.alarmaMasProxima().getHora());
 		}
-		// Configura el temporizador para hacer sonar la alarma
-		suenaAlarmaTask = new SuenaAlarmaTask(context);
-		timer.schedule(suenaAlarmaTask, context.alarmaMasProxima().getHora());
 	}
 
-	public void alarmaOff(ControladorAlarma context) {
+	// Cada vez que se modifique una alarma se vuelve a hacer el entry de programado
+	// por si esa alarma resulta ser ahora o deja de ser la mas proxima.
+
+	public void alarmaOn(ControladorAlarma context, String id) {
+		context.activaAlarma(context.alarma(id));
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 	}
 	
-	public void borraAlarma(ControladorAlarma context) {
+	public void alarmaOff(ControladorAlarma context, String id) {
+		context.desactivaAlarma(context.alarma(id));
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 	}
-	
+
+	public void borraAlarma(ControladorAlarma context, String id) {
+		context.eliminaAlarma(context.alarma(id));
+		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
+		context.setState(estadoProgramado);
+		estadoProgramado.entryAction(context);
+	}
+
+	public void nuevaAlarma(ControladorAlarma context, String id, Date hora) {
+		System.out.println("OTRA ALARMA");
+		context.anhadeAlarma(new Alarma(id, hora));
+		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
+		context.setState(estadoProgramado);
+		estadoProgramado.entryAction(context);
+	}
+
 	// Clase de hacer sonar la alarma mas proxima
 	public class SuenaAlarmaTask extends TimerTask {
 		private ControladorAlarma context;
@@ -49,19 +70,5 @@ public class Programado extends ControladorAlarmaState {
 			estadoSonando.entryAction(context);
 		}
 	}
-	
-	/*
-	public void nuevaAlarma(ControladorAlarma context) {
-		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
-		context.setState(estadoProgramado);
-		estadoProgramado.entryAction(context);
-	}
-	
-	public void alarmaOn(ControladorAlarma context) {
-		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
-		context.setState(estadoProgramado);
-		estadoProgramado.entryAction(context);
-	}
-	*/	
-	
+
 }

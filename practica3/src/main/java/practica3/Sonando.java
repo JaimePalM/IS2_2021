@@ -37,6 +37,7 @@ public class Sonando extends ControladorAlarmaState {
 		this.exitAction(context);
 		// Cancela el temporizador
 		apagaAlarmaTask.cancel();
+		context.eliminaAlarma(context.alarmaMasProxima());
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
@@ -49,6 +50,7 @@ public class Sonando extends ControladorAlarmaState {
 			context = c;
 		}
 		public void run() {
+			context.eliminaAlarma(context.alarmaMasProxima());
 			ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 			getEstadoSonando().exitAction(context);
 			context.setState(estadoProgramado);

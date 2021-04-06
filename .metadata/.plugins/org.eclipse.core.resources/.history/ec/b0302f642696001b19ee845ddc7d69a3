@@ -1,0 +1,131 @@
+package practica3;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JSpinner;
+import java.awt.Color;
+import javax.swing.JTextPane;
+import javax.swing.SpinnerDateModel;
+import java.util.Date;
+import java.util.Calendar;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class VentanaPrincipal {
+
+	private JFrame frmControladorAlarmas;
+	private JTextField idAlarma;
+	JSpinner spinner = new JSpinner();
+	ControladorAlarma controladorAlarma = new ControladorAlarma();
+	ControladorAlarmaState context = ControladorAlarmaState.init(controladorAlarma);
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal window = new VentanaPrincipal();
+					window.frmControladorAlarmas.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public VentanaPrincipal() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmControladorAlarmas = new JFrame();
+		frmControladorAlarmas.setResizable(false);
+		frmControladorAlarmas.setTitle("Controlador Alarmas");
+		frmControladorAlarmas.setBounds(100, 100, 465, 500);
+		frmControladorAlarmas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		frmControladorAlarmas.getContentPane().add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JLabel lblIdAlarma = new JLabel("Id Alarma");
+		lblIdAlarma.setBounds(26, 163, 75, 14);
+		panel.add(lblIdAlarma);
+		
+		idAlarma = new JTextField();
+		idAlarma.setBounds(111, 160, 108, 20);
+		panel.add(idAlarma);
+		idAlarma.setColumns(10);
+		
+		JLabel lblHoraAlarma = new JLabel("Hora Alarma");
+		lblHoraAlarma.setBounds(26, 194, 75, 14);
+		panel.add(lblHoraAlarma);
+		
+		spinner.setModel(new SpinnerDateModel(new Date(1617573600000L), null, null, Calendar.HOUR));
+		spinner.setBounds(111, 191, 108, 20);
+		panel.add(spinner);
+		
+		JButton btnapagar = new JButton("APAGAR!");
+		btnapagar.setBounds(70, 260, 116, 37);
+		panel.add(btnapagar);
+		
+		JLabel lblAlarmasActivas = new JLabel("Alarmas Activas");
+		lblAlarmasActivas.setBounds(274, 26, 122, 14);
+		panel.add(lblAlarmasActivas);
+		
+		JLabel lblAlarmasDesactivadas = new JLabel("Alarmas Desactivadas");
+		lblAlarmasDesactivadas.setBounds(274, 207, 122, 14);
+		panel.add(lblAlarmasDesactivadas);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setEditable(false);
+		textPane.setBounds(274, 232, 140, 135);
+		panel.add(textPane);
+		
+		JTextPane textPane_1 = new JTextPane();
+		textPane_1.setEditable(false);
+		textPane_1.setBounds(274, 49, 140, 135);
+		panel.add(textPane_1);
+		
+		JButton btnOff = new JButton("OFF");
+		btnOff.setBounds(351, 378, 63, 20);
+		panel.add(btnOff);
+		
+		JButton btnOn = new JButton("ON");
+		btnOn.setBounds(274, 378, 67, 20);
+		panel.add(btnOn);
+		
+		JButton btnEliminar = new JButton("ELIMINAR");
+		btnEliminar.setBounds(274, 409, 140, 23);
+		panel.add(btnEliminar);
+		
+		
+		// BOTON NUEVA ALARMA
+		JButton btnNuevaAlarma = new JButton("Nueva Alarma");
+		btnNuevaAlarma.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				String id = idAlarma.getText();
+				Date hora = (Date)spinner.getValue();
+				controladorAlarma.nuevaAlarma(controladorAlarma, id, hora);
+				System.out.println("La alarma mas proxima es: " + controladorAlarma.alarmaMasProxima().getId());
+			}
+		});
+		btnNuevaAlarma.setBounds(48, 226, 159, 23);
+		panel.add(btnNuevaAlarma);
+	}
+}

@@ -1,0 +1,102 @@
+package practica3;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JSpinner;
+import java.awt.Color;
+import javax.swing.JTextPane;
+
+public class VentanaPrincipal {
+
+	private JFrame frame;
+	private JTextField idAlarma;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal window = new VentanaPrincipal();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public VentanaPrincipal() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 400, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JLabel lblIdAlarma = new JLabel("Id Alarma");
+		lblIdAlarma.setBounds(26, 163, 46, 14);
+		panel.add(lblIdAlarma);
+		
+		idAlarma = new JTextField();
+		idAlarma.setBounds(99, 160, 86, 20);
+		panel.add(idAlarma);
+		idAlarma.setColumns(10);
+		
+		JLabel lblHoraAlarma = new JLabel("Hora Alarma");
+		lblHoraAlarma.setBounds(26, 194, 63, 14);
+		panel.add(lblHoraAlarma);
+		
+		JButton btnNuevaAlarma = new JButton("Nueva Alarma");
+		btnNuevaAlarma.setBounds(26, 222, 159, 23);
+		panel.add(btnNuevaAlarma);
+		
+		JButton btnapagar = new JButton("APAGAR!");
+		btnapagar.setBounds(48, 260, 116, 37);
+		panel.add(btnapagar);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(99, 191, 86, 20);
+		panel.add(spinner);
+		
+		JLabel lblAlarmasActivas = new JLabel("Alarmas Activas");
+		lblAlarmasActivas.setBounds(253, 44, 76, 14);
+		panel.add(lblAlarmasActivas);
+		
+		JLabel lblAlarmasDesactivadas = new JLabel("Alarmas Desactivadas");
+		lblAlarmasDesactivadas.setBounds(226, 231, 116, 14);
+		panel.add(lblAlarmasDesactivadas);
+		
+		JPanel panelAlarmasActivas = new JPanel();
+		panelAlarmasActivas.setForeground(Color.WHITE);
+		panelAlarmasActivas.setBackground(Color.WHITE);
+		panelAlarmasActivas.setBounds(234, 69, 108, 140);
+		panel.add(panelAlarmasActivas);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		panelAlarmasActivas.add(lblNewLabel);
+		
+		JPanel panelAlarmasDesactivadas = new JPanel();
+		panelAlarmasDesactivadas.setBackground(Color.WHITE);
+		panelAlarmasDesactivadas.setBounds(234, 259, 108, 140);
+		panel.add(panelAlarmasDesactivadas);
+	}
+}

@@ -2,19 +2,18 @@ package practica3;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
  * Clase que contiene todas la alarmas y las gestiona.
- * @author Jes√∫s y Jaime
+ * @author Jesus y Jaime
  *
  */
 public class ControladorAlarma {
 
-	private ControladorAlarmaState state; //Estado de la alarma en un isntante
+	private ControladorAlarmaState state; //Estado de la alarma en un instante
 
 	protected final static int INTERVALO_SONAR = 12000;
 	
@@ -32,22 +31,22 @@ public class ControladorAlarma {
 	}
 
 	// Senhales
-	public void nuevaAlarma(ControladorAlarma context, String id, Date hora) {
-		context.anhadeAlarma(new Alarma(id, hora));
+	public void nuevaAlarma(String id, Date hora) {
+		state.nuevaAlarma(this, id, hora);
 	}
 	
-	public void borraAlarma(ControladorAlarma context, String id) {
-		eliminaAlarma(alarma(id));
+	public void borraAlarma(String id) {
+		state.borraAlarma(this, id);
 	}
 	
 	public void apagar(ControladorAlarma context) { }
 	
 	public void alarmaOff(ControladorAlarma context, String id) {
-		desactivaAlarma(alarma(id));
+		state.alarmaOff(this, id);
 	}
 
 	public void alarmaOn(ControladorAlarma context, String id) {
-		activaAlarma(alarma(id));
+		state.alarmaOn(this, id);
 	}
 
 	// MÈtodos
@@ -55,11 +54,11 @@ public class ControladorAlarma {
 
 		if (alarmasDesactivadas.containsKey(id))
 			return alarmasDesactivadas.get(id);
-		else if (alarmasActivadas.contains(id)) {
-			Iterator<Alarma> iter = alarmasActivadas.iterator();
-			while (iter.hasNext())
-				if (iter.next().getId().equals(id))
-					return iter.next();
+		else {
+			for (Alarma a: alarmasActivadas) {
+				if (a.getId().equals(id))
+					return a;
+			}
 		}	
 		return null;
 	}
@@ -75,7 +74,7 @@ public class ControladorAlarma {
 
 	public boolean eliminaAlarma(Alarma a) {
 		// Si la alarma no exite devuelve false
-		if (alarmasActivadas.contains(a) || alarmasDesactivadas.containsKey(a.getId()))
+		if (!alarmasActivadas.contains(a) && !alarmasDesactivadas.containsKey(a.getId()))
 			return false;
 		// Eliminamos la alarma de la cola en la que este
 		if (alarmasActivadas.contains(a))
@@ -107,12 +106,11 @@ public class ControladorAlarma {
 	}
 
 	public void activarMelodia() {
-		System.out.println("¬°¬°SONANDO!!");
+		System.out.println("°°SONANDO!! -> " + alarmaMasProxima().getId());
 	}
 
 	public void desactivarMelodia() {
 		System.out.println("ALARMA APAGADA");
 	}
-
 
 }
