@@ -77,9 +77,13 @@ public class VentanaPrincipal {
 		lblHoraAlarma.setBounds(26, 194, 75, 14);
 		panel.add(lblHoraAlarma);
 		
-		spinner.setModel(new SpinnerDateModel(new Date(1617870060000L), null, null, Calendar.HOUR));
+		spinner.setModel(new SpinnerDateModel(new Date(1617728400000L), null, null, Calendar.HOUR));
 		spinner.setBounds(111, 191, 108, 20);
 		panel.add(spinner);
+		
+		JButton btnapagar = new JButton("¡APAGAR!");
+		btnapagar.setBounds(70, 260, 116, 37);
+		panel.add(btnapagar);
 		
 		JLabel lblAlarmasActivas = new JLabel("Alarmas Activas");
 		lblAlarmasActivas.setBounds(274, 26, 140, 14);
@@ -120,18 +124,6 @@ public class VentanaPrincipal {
 		btnNuevaAlarma.setBounds(48, 226, 159, 23);
 		panel.add(btnNuevaAlarma);
 		
-		// BOTON APAGAR
-		JButton btnapagar = new JButton("¡APAGAR!");
-		btnapagar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				controladorAlarma.apagar();
-				refrescaPaneles();
-			}
-		});
-		btnapagar.setBounds(70, 260, 116, 37);
-		panel.add(btnapagar);
-		
 		// BOTON ALARMA ON
 		JButton btnOn = new JButton("ON");
 		btnOn.addMouseListener(new MouseAdapter() {
@@ -139,7 +131,7 @@ public class VentanaPrincipal {
 			public void mouseClicked(MouseEvent arg0) {
 				String id = idAlarmaMod.getText();
 				if (id.isEmpty() || controladorAlarma.alarma(id) == null) return;
-				controladorAlarma.alarmaOn(id);
+				controladorAlarma.activaAlarma(controladorAlarma.alarma(id));
 				refrescaPaneles();
 			}
 		});
@@ -153,7 +145,7 @@ public class VentanaPrincipal {
 			public void mouseClicked(MouseEvent e) {
 				String id = idAlarmaMod.getText();
 				if (id.isEmpty() || controladorAlarma.alarma(id) == null) return;
-				controladorAlarma.alarmaOff(id);
+				controladorAlarma.desactivaAlarma(controladorAlarma.alarma(id));
 				refrescaPaneles();
 			}
 		});
@@ -167,7 +159,7 @@ public class VentanaPrincipal {
 			public void mouseClicked(MouseEvent e) {
 				String id = idAlarmaMod.getText();
 				if (id.isEmpty() || controladorAlarma.alarma(id) == null) return;
-				controladorAlarma.borraAlarma(id);
+				controladorAlarma.eliminaAlarma(controladorAlarma.alarma(id));
 				refrescaPaneles();
 			}
 		});

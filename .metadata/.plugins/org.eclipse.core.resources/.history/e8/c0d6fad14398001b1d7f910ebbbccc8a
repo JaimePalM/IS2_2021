@@ -39,9 +39,7 @@ public class ControladorAlarma {
 		state.borraAlarma(this, id);
 	}
 	
-	public void apagar() {
-		state.apagar(this);
-	}
+	public void apagar() { }
 	
 	public void alarmaOff(String id) {
 		state.alarmaOff(this, id);

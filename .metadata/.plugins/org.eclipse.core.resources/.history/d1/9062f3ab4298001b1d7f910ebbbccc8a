@@ -77,7 +77,7 @@ public class VentanaPrincipal {
 		lblHoraAlarma.setBounds(26, 194, 75, 14);
 		panel.add(lblHoraAlarma);
 		
-		spinner.setModel(new SpinnerDateModel(new Date(1617870060000L), null, null, Calendar.HOUR));
+		spinner.setModel(new SpinnerDateModel(new Date(1617728400000L), null, null, Calendar.HOUR));
 		spinner.setBounds(111, 191, 108, 20);
 		panel.add(spinner);
 		
@@ -126,7 +126,6 @@ public class VentanaPrincipal {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				controladorAlarma.apagar();
-				refrescaPaneles();
 			}
 		});
 		btnapagar.setBounds(70, 260, 116, 37);

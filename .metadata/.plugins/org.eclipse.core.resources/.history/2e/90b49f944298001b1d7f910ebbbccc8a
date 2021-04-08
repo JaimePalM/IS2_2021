@@ -39,15 +39,13 @@ public class ControladorAlarma {
 		state.borraAlarma(this, id);
 	}
 	
-	public void apagar() {
-		state.apagar(this);
-	}
+	public void apagar(ControladorAlarma context) { }
 	
-	public void alarmaOff(String id) {
+	public void alarmaOff(ControladorAlarma context, String id) {
 		state.alarmaOff(this, id);
 	}
 
-	public void alarmaOn(String id) {
+	public void alarmaOn(ControladorAlarma context, String id) {
 		state.alarmaOn(this, id);
 	}
 

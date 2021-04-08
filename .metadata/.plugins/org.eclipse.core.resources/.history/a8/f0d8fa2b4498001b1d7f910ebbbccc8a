@@ -15,12 +15,12 @@ public class Programado extends ControladorAlarmaState {
 	protected SuenaAlarmaTask suenaAlarmaTask = new SuenaAlarmaTask(null);
 
 	public void entryAction(ControladorAlarma context) {
-		suenaAlarmaTask.cancel();
 		if (context.alarmasActivadas().isEmpty()) {
 			ControladorAlarmaState estadoDesprogramado = getEstadoDesprogramado();
 			context.setState(estadoDesprogramado);
 		} else {
 			// Configura el temporizador para hacer sonar la alarma
+			suenaAlarmaTask.cancel();
 			suenaAlarmaTask = new SuenaAlarmaTask(context);
 			timer.schedule(suenaAlarmaTask, context.alarmaMasProxima().getHora());
 		}

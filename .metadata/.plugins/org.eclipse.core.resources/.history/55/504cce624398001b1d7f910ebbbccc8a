@@ -34,9 +34,9 @@ public class Sonando extends ControladorAlarmaState {
 	 * Apaga la alarma y sale de Sonando
 	 */
 	public void apagar(ControladorAlarma context) {
+		this.exitAction(context);
 		// Cancela el temporizador
 		apagaAlarmaTask.cancel();
-		this.exitAction(context);
 		context.eliminaAlarma(context.alarmaMasProxima());
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
 		context.setState(estadoProgramado);
