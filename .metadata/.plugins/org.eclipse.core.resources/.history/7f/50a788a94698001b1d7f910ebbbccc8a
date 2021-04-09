@@ -10,9 +10,7 @@ import java.util.TimerTask;
  */
 public class Sonando extends ControladorAlarmaState {
 	
-	// Timer que hace apagarse la alarma
 	protected Timer timer = new Timer();
-	// Tarea que se realiza cuando se alcanza el tiempo
 	protected ApagaAlarmaTask apagaAlarmaTask;
 	
 	/**
@@ -32,6 +30,9 @@ public class Sonando extends ControladorAlarmaState {
 		context.desactivarMelodia();
 	}
 	
+	/**
+	 * Apaga la alarma y sale de Sonando
+	 */
 	public void apagar(ControladorAlarma context) {
 		// Cancela el temporizador
 		apagaAlarmaTask.cancel();

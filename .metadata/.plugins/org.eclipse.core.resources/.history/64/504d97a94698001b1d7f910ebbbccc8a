@@ -18,7 +18,6 @@ import java.awt.event.MouseEvent;
 
 public class VentanaPrincipal {
 
-	// Variables del JSwing
 	private JFrame frmControladorAlarmas;
 	private JTextField idAlarma;
 	private JTextField idAlarmaMod;
@@ -26,7 +25,6 @@ public class VentanaPrincipal {
 	JTextPane textAlarmasActivas = new JTextPane();
 	JTextPane textAlarmasDesactivadas = new JTextPane();
 	
-	// Controlador que gestiona todas las alarmas
 	ControladorAlarma controladorAlarma = new ControladorAlarma();
 
 	/**

@@ -19,7 +19,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass> practica3.VentanaPrincipal </mainClass>
+							<mainClass> es.unican.is2.practica3.VentanaPrincipal </mainClass>
 						</manifest>
 					</archive>
 				</configuration>

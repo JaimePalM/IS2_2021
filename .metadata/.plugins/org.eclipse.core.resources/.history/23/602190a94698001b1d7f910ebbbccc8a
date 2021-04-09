@@ -11,16 +11,9 @@ import java.util.TimerTask;
  */
 public class Programado extends ControladorAlarmaState {
 
-	// Timer que hace apagarse la alarma
 	protected Timer timer = new Timer();
-	// Tarea que se realiza cuando se alcanza el tiempo
 	protected SuenaAlarmaTask suenaAlarmaTask = new SuenaAlarmaTask(null);
 
-	/**
-	 * Entry que se ha implementado para poder comprobar en cada operacion si el
-	 * numero de alarmas activas es 0 y por lo tanto se debe cambiar de estado.
-	 * Tambien se actualiza el timer de la alarma mas proxima
-	 */
 	public void entryAction(ControladorAlarma context) {
 		suenaAlarmaTask.cancel();
 		if (context.alarmasActivadas().isEmpty()) {

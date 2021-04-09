@@ -13,21 +13,14 @@ import java.util.Queue;
  */
 public class ControladorAlarma {
 
-	// Estado de la alarma en un instante
-	private ControladorAlarmaState state; 
+	private ControladorAlarmaState state; //Estado de la alarma en un instante
 
-	// Intervalo de tiempo en el que una alarma se apaga automaticamente
 	protected final static int INTERVALO_SONAR = 12000;
 	
-	// Cola de prioridad de alarmas activas, ordenadas por la hora
 	private Queue<Alarma> alarmasActivadas = new PriorityQueue<Alarma>();
-	// Mapa de alarmas desactivadas
 	private Map<String, Alarma> alarmasDesactivadas = new HashMap<String, Alarma>();
 
-	/**
-	 * Constructor de la clase.
-	 * Inicializa el estado del programa.
-	 */
+	// Constructor
 	public ControladorAlarma() {
 		state = ControladorAlarmaState.init(this);
 	}
