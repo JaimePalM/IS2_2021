@@ -58,9 +58,8 @@ public class ControladorAlarma {
 		state.alarmaOn(this, id);
 	}
 
-	// Métodos
+	// Metodos
 	public Alarma alarma(String id) {
-
 		if (alarmasDesactivadas.containsKey(id))
 			return alarmasDesactivadas.get(id);
 		else {
@@ -74,7 +73,7 @@ public class ControladorAlarma {
 
 	public boolean anhadeAlarma(Alarma a) {
 		// Si la alarma ya existe devuelve false
-		if (alarmasActivadas.contains(a) || alarmasDesactivadas.containsKey(a.getId()))
+		if (alarma(a.getId()) != null) 
 			return false;
 		
 		// Anhade la alarma y la activa
@@ -83,13 +82,14 @@ public class ControladorAlarma {
 
 	public boolean eliminaAlarma(Alarma a) {
 		// Si la alarma no exite devuelve false
-		if (!alarmasActivadas.contains(a) && !alarmasDesactivadas.containsKey(a.getId()))
+		if (alarma(a.getId()) == null)
 			return false;
 		// Eliminamos la alarma de la cola en la que este
 		if (alarmasActivadas.contains(a))
 			return alarmasActivadas.remove(a);
 		else
-			return alarmasDesactivadas.containsKey(a.getId());
+			alarmasDesactivadas.remove(a.getId());
+		return true;
 	}
 
 	public Alarma alarmaMasProxima() {
@@ -97,6 +97,7 @@ public class ControladorAlarma {
 	}
 
 	public void activaAlarma(Alarma a) {		
+		if (alarmasActivadas.contains(a)) return;
 		alarmasActivadas.add(a);
 		alarmasDesactivadas.remove(a.getId());
 	}

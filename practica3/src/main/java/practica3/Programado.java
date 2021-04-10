@@ -39,28 +39,24 @@ public class Programado extends ControladorAlarmaState {
 	public void alarmaOn(ControladorAlarma context, String id) {
 		context.activaAlarma(context.alarma(id));
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
-		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 	}
 	
 	public void alarmaOff(ControladorAlarma context, String id) {
 		context.desactivaAlarma(context.alarma(id));
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
-		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 	}
 
 	public void borraAlarma(ControladorAlarma context, String id) {
 		context.eliminaAlarma(context.alarma(id));
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
-		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 	}
 
 	public void nuevaAlarma(ControladorAlarma context, String id, Date hora) {
 		context.anhadeAlarma(new Alarma(id, hora));
 		ControladorAlarmaState estadoProgramado = getEstadoProgramado();
-		context.setState(estadoProgramado);
 		estadoProgramado.entryAction(context);
 	}
 

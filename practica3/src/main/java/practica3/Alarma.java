@@ -12,7 +12,11 @@ public class Alarma implements Comparable<Alarma> {
 	private String id; // Id de la alarma
 	private Date hora; // Hora a la que se activa al alarma
 
-	// Constructor
+	/**
+	 * Constructor de la clase Alarma
+	 * @param id id de la alarma a crear
+	 * @param hora hora a que sonara la alarma
+	 */
 	public Alarma(String id, Date hora) {
 		this.id = id;
 		this.hora = hora;
@@ -36,11 +40,6 @@ public class Alarma implements Comparable<Alarma> {
 		}
 		else 
 			return 0;
-	}
-
-	@Override
-	public String toString() {
-		return id + "\n";
 	}
 
 }

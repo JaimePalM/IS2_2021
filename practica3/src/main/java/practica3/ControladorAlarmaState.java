@@ -35,18 +35,14 @@ public abstract class ControladorAlarmaState {
 	 * @param id id de la nueva alarma.
 	 * @param hora hora a la que sonara la alarma.
 	 */
-	public void nuevaAlarma(ControladorAlarma context, String id, Date hora) {
-		context.anhadeAlarma(new Alarma(id, hora));
-	}
+	public void nuevaAlarma(ControladorAlarma context, String id, Date hora) { }
 	
 	/**
 	 * Borra una alarma de un id dado.
 	 * @param context estado en el que se encuentra el programa.
 	 * @param id id de la alarma a eliminar.
 	 */
-	public void borraAlarma(ControladorAlarma context, String id) {
-		context.eliminaAlarma(context.alarma(id));
-	}
+	public void borraAlarma(ControladorAlarma context, String id) {	}
 	
 	/**
 	 * Apaga la alarma que esta sonando.
@@ -59,19 +55,16 @@ public abstract class ControladorAlarmaState {
 	 * @param context estado en el que se encuentra el programa.
 	 * @param id id de la alarma a desactivar.
 	 */
-	public void alarmaOff(ControladorAlarma context, String id) {
-		context.desactivaAlarma(context.alarma(id));
-	}
+	public void alarmaOff(ControladorAlarma context, String id) { }
 	
 	/**
 	 * Enciende la alarma indicada.
 	 * @param context estado en el que se encuentra el programa.
 	 * @param id id de la alarma a activar.
 	 */
-	public void alarmaOn(ControladorAlarma context, String id) {
-		context.activaAlarma(context.alarma(id));
-	}
+	public void alarmaOn(ControladorAlarma context, String id) { }
 
+	
 	// Getters
 	public static ControladorAlarmaState getEstadoProgramado() {
 		return estadoProgramado;
