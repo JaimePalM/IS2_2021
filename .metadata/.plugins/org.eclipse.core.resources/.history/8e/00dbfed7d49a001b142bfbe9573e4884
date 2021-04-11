@@ -131,7 +131,7 @@ public class VentanaPrincipal {
 		idAlarmaMod.setColumns(10);
 		
 		JPanel panelMod = new JPanel();
-		panelMod.setBorder(new TitledBorder(null, "Modificar Alarma", 
+		panelMod.setBorder(new TitledBorder(null, "Modifica Alarma", 
 				TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelMod.setBounds(10, 232, 222, 61);
 		panel.add(panelMod);

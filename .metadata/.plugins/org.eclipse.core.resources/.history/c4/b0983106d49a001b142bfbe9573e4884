@@ -11,8 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JSpinner;
 import javax.swing.JTextPane;
 import javax.swing.SpinnerDateModel;
-import javax.swing.border.TitledBorder;
-
 import java.util.Date;
 import java.util.Calendar;
 import java.awt.event.MouseAdapter;
@@ -67,43 +65,23 @@ public class VentanaPrincipal {
 		JPanel panel = new JPanel();
 		frmControladorAlarmas.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
-
+		
 		JLabel lblIdAlarma = new JLabel("Id Alarma");
-		lblIdAlarma.setBounds(26, 118, 75, 14);
+		lblIdAlarma.setBounds(26, 163, 75, 14);
 		panel.add(lblIdAlarma);
 		
 		idAlarma = new JTextField();
-		idAlarma.setBounds(111, 115, 108, 20);
+		idAlarma.setBounds(111, 160, 108, 20);
 		panel.add(idAlarma);
 		idAlarma.setColumns(10);
 		
 		JLabel lblHoraAlarma = new JLabel("Hora Alarma");
-		lblHoraAlarma.setBounds(26, 149, 75, 14);
+		lblHoraAlarma.setBounds(26, 194, 75, 14);
 		panel.add(lblHoraAlarma);
 		
 		spinner.setModel(new SpinnerDateModel(new Date(1617870060000L), null, null, Calendar.HOUR));
-		spinner.setBounds(111, 146, 108, 20);
+		spinner.setBounds(111, 191, 108, 20);
 		panel.add(spinner);
-		
-		// BOTON NUEVA ALARMA
-		JButton btnNuevaAlarma = new JButton("Nueva Alarma");
-		btnNuevaAlarma.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				String id = idAlarma.getText();
-				Date hora = (Date)spinner.getValue();
-				controladorAlarma.nuevaAlarma(id, hora);
-				refrescaPaneles();
-			}
-		});
-		btnNuevaAlarma.setBounds(48, 181, 159, 23);
-		panel.add(btnNuevaAlarma);
-		
-		JPanel panelCrear = new JPanel();
-		panelCrear.setBorder(new TitledBorder(null, "Crear Alarma", 
-				TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panelCrear.setBounds(10, 99, 222, 116);
-		panel.add(panelCrear);
 		
 		JLabel lblAlarmasActivas = new JLabel("Alarmas Activas");
 		lblAlarmasActivas.setBounds(274, 26, 140, 14);
@@ -122,19 +100,27 @@ public class VentanaPrincipal {
 		panel.add(textAlarmasActivas);
 		
 		JLabel lblIdAlarma_1 = new JLabel("Id Alarma");
-		lblIdAlarma_1.setBounds(26, 260, 75, 14);
+		lblIdAlarma_1.setBounds(26, 343, 75, 14);
 		panel.add(lblIdAlarma_1);
 		
 		idAlarmaMod = new JTextField();
-		idAlarmaMod.setBounds(111, 257, 108, 20);
+		idAlarmaMod.setBounds(111, 340, 86, 20);
 		panel.add(idAlarmaMod);
 		idAlarmaMod.setColumns(10);
 		
-		JPanel panelMod = new JPanel();
-		panelMod.setBorder(new TitledBorder(null, "Modificar Alarma", 
-				TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panelMod.setBounds(10, 232, 222, 61);
-		panel.add(panelMod);
+		// BOTON NUEVA ALARMA
+		JButton btnNuevaAlarma = new JButton("Nueva Alarma");
+		btnNuevaAlarma.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				String id = idAlarma.getText();
+				Date hora = (Date)spinner.getValue();
+				controladorAlarma.nuevaAlarma(id, hora);
+				refrescaPaneles();
+			}
+		});
+		btnNuevaAlarma.setBounds(48, 226, 159, 23);
+		panel.add(btnNuevaAlarma);
 		
 		// BOTON APAGAR
 		JButton btnapagar = new JButton("¡APAGAR!");
@@ -145,7 +131,7 @@ public class VentanaPrincipal {
 				refrescaPaneles();
 			}
 		});
-		btnapagar.setBounds(66, 324, 116, 37);
+		btnapagar.setBounds(70, 260, 116, 37);
 		panel.add(btnapagar);
 		
 		// BOTON ALARMA ON
@@ -188,7 +174,9 @@ public class VentanaPrincipal {
 			}
 		});
 		btnEliminar.setBounds(274, 409, 140, 23);
-		panel.add(btnEliminar);		
+		panel.add(btnEliminar);
+		
+		
 	}
 	
 	/**
