@@ -1,4 +1,4 @@
-package practica4;
+package practica4.modelo;
 
 public class Cliente {
 
@@ -11,4 +11,18 @@ public class Cliente {
 		this.dni = dni;
 		this.minusvalia = minusvalia;
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public boolean isMinusvalia() {
+		return minusvalia;
+	}
+	
+	
 }
