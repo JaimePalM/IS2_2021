@@ -1,4 +1,4 @@
-package practica4.modelo;
+package es.unican.is2.practica4.modelo;
 
 import java.time.LocalDate;
 
@@ -6,7 +6,7 @@ public class Seguro {
 
 	@SuppressWarnings("serial")
 	public class DatoIncorrectoException extends Exception {}
-	
+	 
 	private LocalDate fechaUltimoSiniestro;
 	private int potenciaCV;
 	private Cliente tomadorSeguro;
@@ -15,10 +15,8 @@ public class Seguro {
 	public Seguro (int potencia, Cliente cliente, Cobertura cobertura) 
 			throws DatoIncorrectoException{
 		
-		if (potencia <= 0 || cliente == null || cobertura == null) {
-			System.out.println("Lanza excepcion");
+		if (potencia <= 0 || cliente == null || cobertura == null)
 			throw new DatoIncorrectoException();
-		}
 		
 		this.potenciaCV = potencia;
 		this.tomadorSeguro = cliente;
@@ -43,7 +41,7 @@ public class Seguro {
 			precioFinal = Cobertura.TERCEROS.getPrecio();
 			break;
 		}	
-		
+	 	
 		// Segun potencia
 		if (potenciaCV >= 90 && potenciaCV <= 110) 
 			precioFinal = precioFinal * 1.05;
@@ -72,6 +70,8 @@ public class Seguro {
 
 	public void setFechaUltimoSiniestro(LocalDate fechaUltimoSiniestro) 
 			throws DatoIncorrectoException {
+		if (fechaUltimoSiniestro != null && fechaUltimoSiniestro.isAfter(LocalDate.now()))
+			throw new DatoIncorrectoException();
 		this.fechaUltimoSiniestro = fechaUltimoSiniestro;
 	}
 

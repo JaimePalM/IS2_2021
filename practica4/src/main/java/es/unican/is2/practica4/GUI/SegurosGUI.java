@@ -1,4 +1,4 @@
-package practica4.GUI;
+package es.unican.is2.practica4.GUI;
 
 import java.awt.EventQueue;
 
@@ -6,10 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import practica4.modelo.Cliente;
-import practica4.modelo.Cobertura;
-import practica4.modelo.Seguro;
-import practica4.modelo.Seguro.DatoIncorrectoException;
+import es.unican.is2.practica4.modelo.Cliente;
+import es.unican.is2.practica4.modelo.Cobertura;
+import es.unican.is2.practica4.modelo.Seguro;
+import es.unican.is2.practica4.modelo.Seguro.DatoIncorrectoException;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -22,7 +22,7 @@ import java.time.format.DateTimeParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-
+ 
 @SuppressWarnings("serial")
 public class SegurosGUI extends JFrame {
 
@@ -52,6 +52,7 @@ public class SegurosGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public SegurosGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 543, 289);
@@ -81,7 +82,7 @@ public class SegurosGUI extends JFrame {
 		btnCalcular.setName("btnCalcular");
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 				double precio=0.0;
 				try {
 					LocalDate fechaUltimoSiniestro = LocalDate.parse(txtFechaUltimoSiniestro.getText(), formatter);
@@ -94,7 +95,7 @@ public class SegurosGUI extends JFrame {
 			    	txtPrecio.setText(Double.toString(precio));
 			    	
 				} catch (DatoIncorrectoException e) {
-					txtPrecio.setText(Double.toString(precio));
+					txtPrecio.setText("Error. Dato introducido incorrecto.");
 					
 				} catch (DateTimeParseException e) {
 					txtPrecio.setText("La fecha no se pudo parsear");
@@ -109,8 +110,9 @@ public class SegurosGUI extends JFrame {
 		btnMinusvalia.setBounds(243, 93, 109, 23);
 		btnMinusvalia.setName("btnMinusvalia");
 		contentPane.add(btnMinusvalia);
-		
+		 
 		comboCobertura = new JComboBox();
+		comboCobertura.setName("comboCobertura");
 		comboCobertura.setModel(new DefaultComboBoxModel(new String[] {"TODO_RIESGO", "TERCEROS_LUNAS", "TERCEROS"}));
 		comboCobertura.setBounds(124, 44, 188, 23);
 		contentPane.add(comboCobertura);
@@ -122,7 +124,7 @@ public class SegurosGUI extends JFrame {
 		JLabel lblPotencia = new JLabel("Potencia");
 		lblPotencia.setBounds(10, 104, 114, 17);
 		contentPane.add(lblPotencia);
-		
+		 
 		txtPotencia = new JTextField();
 		txtPotencia.setText("75");
 		txtPotencia.setName("txtPotencia");

@@ -1,4 +1,4 @@
-package practica4.modelo;
+package es.unican.is2.practica4.modelo;
 
 import static org.junit.Assert.*;
 
@@ -6,10 +6,10 @@ import java.time.LocalDate;
 
 import org.junit.*;
 
-import practica4.modelo.Cliente;
-import practica4.modelo.Cobertura;
-import practica4.modelo.Seguro;
-import practica4.modelo.Seguro.DatoIncorrectoException;;
+import es.unican.is2.practica4.modelo.Cliente;
+import es.unican.is2.practica4.modelo.Cobertura;
+import es.unican.is2.practica4.modelo.Seguro;
+import es.unican.is2.practica4.modelo.Seguro.DatoIncorrectoException;;
 
 public class SeguroTest {
 
@@ -48,6 +48,15 @@ public class SeguroTest {
 			seguro = new Seguro(1, cliente1, Cobertura.TERCEROS);
 			seguro.setFechaUltimoSiniestro(LocalDate.now().minusDays(1));
 			assertTrue(seguro.getFechaUltimoSiniestro().equals(LocalDate.now().minusDays(1)));
+		} catch (DatoIncorrectoException e) { }
+		
+		/**
+		 * Caso No Valido
+		 */
+		try {
+			seguro = new Seguro(1, cliente1, Cobertura.TERCEROS);
+			seguro.setFechaUltimoSiniestro(LocalDate.now().plusDays(1));
+			fail("Deberia haberse lanzado excepción");
 		} catch (DatoIncorrectoException e) { }
 	}
 	
@@ -146,7 +155,7 @@ public class SeguroTest {
 			seguro.setFechaUltimoSiniestro(LocalDate.now().minusYears(2));
 			assertTrue(seguro.precio() == 450);
 		} catch (DatoIncorrectoException e) {}
-		
+	 	
 		try {
 			seguro = new Seguro(1, cliente1, Cobertura.TERCEROS);
 			seguro.setFechaUltimoSiniestro(LocalDate.now().minusYears(3));

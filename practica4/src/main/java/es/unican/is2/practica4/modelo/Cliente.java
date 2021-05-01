@@ -1,4 +1,4 @@
-package practica4.modelo;
+package es.unican.is2.practica4.modelo;
 
 public class Cliente {
 
