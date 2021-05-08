@@ -22,8 +22,12 @@ import java.time.format.DateTimeParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
- 
-@SuppressWarnings("serial")
+
+/**
+ * Clase de la interfaz grafica de Seguro.
+ * @author Jesus Ortega y Jaime Palacios
+ *
+ */
 public class SegurosGUI extends JFrame {
 
 	private JPanel contentPane;

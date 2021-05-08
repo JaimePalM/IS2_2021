@@ -2,6 +2,11 @@ package es.unican.is2.practica4.modelo;
 
 import java.time.LocalDate;
 
+/**
+ * Clase de negocio Seguro.
+ * @author Jesus Ortega y Jaime Palacios
+ *
+ */
 public class Seguro {
 
 	@SuppressWarnings("serial")

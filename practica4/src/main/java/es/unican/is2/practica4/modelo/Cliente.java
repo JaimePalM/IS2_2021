@@ -1,5 +1,10 @@
 package es.unican.is2.practica4.modelo;
 
+/**
+ * Clase de negocio Cliente.
+ * @author Jesus Ortega y Jaime Palacios
+ *
+ */
 public class Cliente {
 
 	private String nombre;

@@ -2,9 +2,13 @@ package es.unican.is2.practica4.ListaOrdenada;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
 //import es.unican.is2.containers.ListaOrdenada;
 
+/**
+ * Clase de prueba en JUnit de la clase ListaOrdenada.
+ * @author Jesus Ortega y Jaime Palacios
+ *
+ */
 public class ListaOrdenadaTest {
 
 	@Test
@@ -17,7 +21,7 @@ public class ListaOrdenadaTest {
 		// add lista vacia y get con un elemento
 		try {
 			sut.add(2);
-			assertTrue(sut.get(0) == 2);
+			assertTrue("Resultado esperado: 2. Obtenido: " + sut.get(0), sut.get(0) == 2);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
@@ -25,15 +29,15 @@ public class ListaOrdenadaTest {
 		// add con un elemento y get con varios elementos
 		try {
 			sut.add(4);
-			assertTrue(sut.get(1) == 4);
+			assertTrue("Resultado esperado: 4. Obtenido: " + sut.get(1), sut.get(1) == 4);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
 		
 		// add con elementos
 		try {
-			sut.add(1);
-			assertTrue(sut.get(0) == 1);
+			sut.add(3);
+			assertTrue("Resultado esperado: 3. Obtenido: " + sut.get(1), sut.get(1) == 3);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
@@ -83,7 +87,7 @@ public class ListaOrdenadaTest {
 		
 		// size con lista vacia
 		try {
-			assertTrue(sut.size() == 0);
+			assertTrue("Resultado esperado: 0. Obtenido: " + sut.size(), sut.size() == 0);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
@@ -91,7 +95,7 @@ public class ListaOrdenadaTest {
 		// size con un elemento
 		try {
 			sut.add(2);
-			assertTrue(sut.size() == 1);
+			assertTrue("Resultado esperado: 1. Obtenido: " + sut.size(), sut.size() == 1);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
@@ -101,7 +105,7 @@ public class ListaOrdenadaTest {
 			sut.add(5);
 			sut.add(8);
 			sut.add(9);
-			assertTrue(sut.size() == 4);
+			assertTrue("Resultado esperado: 4. Obtenido: " + sut.size(), sut.size() == 4);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
@@ -113,25 +117,24 @@ public class ListaOrdenadaTest {
 		ListaOrdenada<Integer> sut = new ListaOrdenada<Integer>();
 		int valor;
 		
-		/*
 		// remove con lista con un elemento
 		try {
 			sut.add(4);
 			valor = sut.remove(0);
-			assertTrue(valor == 4);
-			assertTrue(sut.size() == 0);
+			assertTrue("Resultado esperado: 4. Obtenido: " + valor, valor == 4);
+			assertTrue("Resultado esperado: 0. Obtenido: " + sut.size(), sut.size() == 0);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
-		*/
+	
 		// remove con elementos
 		try {
 			sut.add(2);
 			sut.add(4);
 			sut.add(8);
 			valor = sut.remove(2);
-			assertTrue(valor == 8);
-			assertTrue(sut.size() == 2);
+			assertTrue("Resultado esperado: 8. Obtenido: " + valor, valor == 8);
+			assertTrue("Resultado esperado: 2. Obtenido: " + sut.size(), sut.size() == 2);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}	
@@ -152,7 +155,7 @@ public class ListaOrdenadaTest {
 		try {
 			sut.add(6);
 			sut.clear();
-			assertTrue(sut.size() == 0);
+			assertTrue("Resultado esperado: 0. Obtenido: " + sut.size(), sut.size() == 0);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}
@@ -165,7 +168,7 @@ public class ListaOrdenadaTest {
 			sut.add(7);
 			sut.add(8);
 			sut.clear();
-			assertTrue(sut.size() == 0);
+			assertTrue("Resultado esperado: 0. Obtenido: " + sut.size(), sut.size() == 0);
 		} catch (Exception e) {
 			fail("No deberia haber lanzado excepción.");
 		}

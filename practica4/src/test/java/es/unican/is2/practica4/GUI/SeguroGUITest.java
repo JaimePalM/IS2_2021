@@ -8,6 +8,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Clase de prueba en JUnit de la clase SeguroGUI.
+ * @author Jesus Ortega y Jaime Palacios
+ *
+ */
 public class SeguroGUITest {
 
 	private FrameFixture demo;
@@ -64,19 +69,7 @@ public class SeguroGUITest {
 		demo.textBox("txtPrecio").requireText("1100.0");
 		
 		
-		// Caso 3
-		demo.textBox("txtFechaUltimoSiniestro").deleteText();
-		date = LocalDate.now().minusYears(10);
-	    text = date.format(formatters);
-		demo.textBox("txtFechaUltimoSiniestro").enterText(text);
-		demo.comboBox("comboCobertura").selectItem(1);
-		demo.textBox("txtPotencia").deleteText();
-		demo.textBox("txtPotencia").enterText("200");
-		demo.button("btnCalcular").click();
-		demo.textBox("txtPrecio").requireText("720.0");
-		
-		
-		// Caso 4 --> No valido
+		// Caso 3 --> No valido
 		demo.textBox("txtFechaUltimoSiniestro").deleteText();
 		date = LocalDate.now().minusYears(10);
 	    text = date.format(formatters);
