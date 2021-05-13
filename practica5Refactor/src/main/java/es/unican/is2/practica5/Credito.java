@@ -1,5 +1,6 @@
 package es.unican.is2.practica5;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,10 +11,10 @@ public class Credito extends Tarjeta {
 	private static final double COMISION_RETIRADA = 0.05; // Añadimos una comisión de un 5%
 	private double credito;
 	private List<Movimiento> movimientosMensuales;
-	private List<Movimiento> historicoMovimientos;	
+	private List<Movimiento> historicoMovimientos;
 	
-	public Credito(String numero, String titular, CuentaAhorro c, double credito) { // WMC: +1  CCog: +0
-		super(numero, titular, c);
+	public Credito(String numero, String titular, CuentaAhorro c, double credito, LocalDate f) { // WMC: +1  CCog: +0
+		super(numero, titular, c, f);
 		this.credito = credito;
 		movimientosMensuales = new LinkedList<Movimiento>();
 		historicoMovimientos = new LinkedList<Movimiento>();
@@ -22,30 +23,30 @@ public class Credito extends Tarjeta {
 	/**
 	 * Retirada de dinero en cajero con la tarjeta
 	 * @param cantidadRetirada Cantidad a retirar. Se aplica una comisión del 5%.
-	 * @throws saldoInsuficienteException
-	 * @throws datoErroneoException
+	 * @throws SaldoInsuficienteException
+	 * @throws DatoErroneoException
 	 */
 	@Override
-	public void retirar(double cantidadRetirada) throws saldoInsuficienteException, datoErroneoException { // WMC: +1  CCog: +0
+	public void retirar(double cantidadRetirada) throws SaldoInsuficienteException, DatoErroneoException { // WMC: +1  CCog: +0
 		if (cantidadRetirada<0) // WMC: +1  CCog: +1
-			throw new datoErroneoException("No se puede retirar una cantidad negativa");
+			throw new DatoErroneoException("No se puede retirar una cantidad negativa");
 		
 		cantidadRetirada += cantidadRetirada * COMISION_RETIRADA; 
 		Movimiento m = new Movimiento("Retirada en cajero automático", LocalDateTime.now(), -cantidadRetirada);
 		
 		if (getGastosAcumulados()+cantidadRetirada > credito) // WMC: +1  CCog: +1
-			throw new saldoInsuficienteException("Crédito insuficiente");
+			throw new SaldoInsuficienteException("Crédito insuficiente");
 
 		movimientosMensuales.add(m);
 	}
 
 	@Override
-	public void pagoEnEstablecimiento(String datos, double cantidadAPagar) throws saldoInsuficienteException, datoErroneoException { // WMC: +1  CCog: +0
+	public void pagoEnEstablecimiento(String datos, double cantidadAPagar) throws SaldoInsuficienteException, DatoErroneoException { // WMC: +1  CCog: +0
 		if (cantidadAPagar<0) // WMC: +1  CCog: +1
-			throw new datoErroneoException("No se puede retirar una cantidad negativa");
+			throw new DatoErroneoException("No se puede retirar una cantidad negativa");
 		
 		if (getGastosAcumulados() + cantidadAPagar > credito) // WMC: +1  CCog: +1
-			throw new saldoInsuficienteException("Saldo insuficiente");
+			throw new SaldoInsuficienteException("Saldo insuficiente");
 		
 		Movimiento m = new Movimiento("Compra a crédito en: " + datos, LocalDateTime.now(), -cantidadAPagar);
 		movimientosMensuales.add(m);

@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="es.unican.is2.practica5.datoErroneoException" project="practica5Refactor" 
-    file="/practica5Refactor/src/main/java/es/unican/is2/practica5/datoErroneoException.java" binary="false" 
+  <class id="4" language="java" name="es.unican.is2.practica5.DatoErroneoException" project="practica5Refactor" 
+    file="/practica5Refactor/src/main/java/es/unican/is2/practica5/DatoErroneoException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="566" y="722"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -94,8 +94,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="es.unican.is2.practica5.saldoInsuficienteException" project="practica5Refactor" 
-    file="/practica5Refactor/src/main/java/es/unican/is2/practica5/saldoInsuficienteException.java" binary="false" 
+  <class id="11" language="java" name="es.unican.is2.practica5.SaldoInsuficienteException" project="practica5Refactor" 
+    file="/practica5Refactor/src/main/java/es/unican/is2/practica5/SaldoInsuficienteException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="934" y="869"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

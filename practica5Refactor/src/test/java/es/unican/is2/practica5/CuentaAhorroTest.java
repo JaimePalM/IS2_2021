@@ -26,7 +26,7 @@ public class CuentaAhorroTest {
 
 	@Before
 	public void setUpBeforeClass() throws Exception {
-		sut = new CuentaAhorro("794311", LocalDate.now().plusYears(3), LocalDate.now().plusYears(4));
+		sut = new CuentaAhorro("794311");
 	}
 
 	@Test
@@ -56,8 +56,8 @@ public class CuentaAhorroTest {
 		try {
 			sut.retirar(null, -10);
 			fail("Debería lanzar DatoErroneoException");
-		} catch (datoErroneoException e) {
-		} catch (saldoInsuficienteException e) {
+		} catch (DatoErroneoException e) {
+		} catch (SaldoInsuficienteException e) {
 			fail("Debería lanzar DatoErroneoException");
 		}
 		
@@ -68,9 +68,9 @@ public class CuentaAhorroTest {
 			assertTrue(sut.getSaldo()==50);
 			assertTrue(sut.getMovimientos().size()==2);
 			assertTrue(sut.getMovimientos().get(1).getConcepto().equals("Retirada de efectivo"));
-		} catch (datoErroneoException e) {
+		} catch (DatoErroneoException e) {
 			fail("No debería lanzar DatoErroneoException");
-		} catch (saldoInsuficienteException e) {
+		} catch (SaldoInsuficienteException e) {
 			fail("No debería lanzar SaldoInsuficienteException");
 		}
 		
@@ -78,9 +78,9 @@ public class CuentaAhorroTest {
 		try {
 			sut.retirar(null, 100);
 			fail("Debería lanzar SaldoInsuficienteException");
-		} catch (datoErroneoException e) {
+		} catch (DatoErroneoException e) {
 			fail("Debería lanzar SaldoInsuficienteException");
-		} catch (saldoInsuficienteException e) {
+		} catch (SaldoInsuficienteException e) {
 			
 		}
 	
@@ -93,7 +93,7 @@ public class CuentaAhorroTest {
 		try {
 			sut.ingresar(null, -1);
 			fail("Debería lanzar DatoErroneoException");
-		} catch (datoErroneoException e) {
+		} catch (DatoErroneoException e) {
 		}
 
 		// Test ingresar el limite
@@ -107,7 +107,7 @@ public class CuentaAhorroTest {
 			assertTrue(sut.getSaldo()==100.01);
 			assertTrue(sut.getMovimientos().size()==2);
 			
-		} catch (datoErroneoException e) {
+		} catch (DatoErroneoException e) {
 			fail("No debería lanzar la excepción");
 		}
 		
