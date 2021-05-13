@@ -66,7 +66,7 @@ public class SegurosGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		txtFechaUltimoSiniestro = new JTextField();
-		txtFechaUltimoSiniestro.setText("dd/mm/yyyy");
+		txtFechaUltimoSiniestro.setText("dd-mm-yyyy");
 		txtFechaUltimoSiniestro.setName("txtFechaUltimoSiniestro");
 		txtFechaUltimoSiniestro.setBounds(124, 8, 86, 20);
 		contentPane.add(txtFechaUltimoSiniestro);
