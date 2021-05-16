@@ -1,6 +1,5 @@
 package es.unican.is2.practica5;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,8 +12,8 @@ public class Credito extends Tarjeta {
 	private List<Movimiento> movimientosMensuales;
 	private List<Movimiento> historicoMovimientos;
 	
-	public Credito(String numero, String titular, CuentaAhorro c, double credito, LocalDate f) { // WMC: +1  CCog: +0
-		super(numero, titular, c, f);
+	public Credito(String numero, String titular, CuentaAhorro c, double credito) { // WMC: +1  CCog: +0
+		super(numero, titular, c);
 		this.credito = credito;
 		movimientosMensuales = new LinkedList<Movimiento>();
 		historicoMovimientos = new LinkedList<Movimiento>();

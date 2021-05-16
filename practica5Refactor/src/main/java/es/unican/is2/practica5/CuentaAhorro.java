@@ -1,5 +1,6 @@
 package es.unican.is2.practica5;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,10 +8,14 @@ import java.util.List;
 public class CuentaAhorro extends Cuenta {
 
 	private static final int LIMITE_DEBITO = 1000;
+	private LocalDate mFechaDeCaducidadTarjetaDebito;
+	private LocalDate mFechaDeCaducidadTarjetaCredito;
 	private List<Movimiento> movimientos;
 	
-	public CuentaAhorro(String numCuenta) { // WMC: +1  CCog: +0
+	public CuentaAhorro(String numCuenta, LocalDate date, LocalDate date2) { // WMC: +1  CCog: +0
 		super(numCuenta);
+		this.mFechaDeCaducidadTarjetaDebito = date;
+		this.mFechaDeCaducidadTarjetaCredito = date2;
 		movimientos = new LinkedList<Movimiento>();
 	}
 
@@ -49,6 +54,14 @@ public class CuentaAhorro extends Cuenta {
 
 	public List<Movimiento> getMovimientos() { // WMC: +1  CCog: +0
 		return movimientos;
+	}
+	
+	public LocalDate getCaducidadDebito() { // WMC: +1  CCog: +0
+		return this.mFechaDeCaducidadTarjetaDebito;
+	}
+
+	public LocalDate getCaducidadCredito() { // WMC: +1  CCog: +0
+		return this.mFechaDeCaducidadTarjetaCredito;
 	}
 
 	public double getLimiteDebito() { // WMC: +1  CCog: +0

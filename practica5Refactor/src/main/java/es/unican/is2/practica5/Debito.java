@@ -1,13 +1,11 @@
 package es.unican.is2.practica5;
 
-import java.time.LocalDate;
-
 public class Debito extends Tarjeta {
 	
 	private double saldoDiarioDisponible;
 
-	public Debito(String numero, String titular, CuentaAhorro c, LocalDate f) { // WMC: +1  CCog: +0
-		super(numero, titular, c, f);
+	public Debito(String numero, String titular, CuentaAhorro c) { // WMC: +1  CCog: +0
+		super(numero, titular, c);
 	}
 	
 	

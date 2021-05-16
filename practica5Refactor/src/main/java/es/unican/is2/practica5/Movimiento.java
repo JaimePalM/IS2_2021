@@ -6,10 +6,10 @@ public class Movimiento {
 	private String concepto;
 	private LocalDateTime fecha;
 	private double importe;
+		
+	public Movimiento() {}
 	
-	public Movimiento() { }
-	
-	public Movimiento(String concepto, LocalDateTime fecha, double importe) {
+	public Movimiento(String concepto, LocalDateTime fecha, double importe) { // WMC: +1  CCog: +0
 		this.concepto = concepto;
 		this.fecha = fecha;
 		this.importe = importe;

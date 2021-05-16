@@ -26,7 +26,7 @@ public class CuentaAhorroTest {
 
 	@Before
 	public void setUpBeforeClass() throws Exception {
-		sut = new CuentaAhorro("794311");
+		sut = new CuentaAhorro("794311", LocalDate.now().plusYears(3), LocalDate.now().plusYears(4));
 	}
 
 	@Test

@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="es.unican.is2.practica5.Credito" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/Credito.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="241" x="-46" y="568"/>    
+    <position height="-1" width="-1" x="73" y="624"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +22,7 @@
   <class id="3" language="java" name="es.unican.is2.practica5.datoErroneoException" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/datoErroneoException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="81" width="168" x="40" y="92"/>    
+    <position height="-1" width="-1" x="196" y="260"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +31,7 @@
   </class>  
   <class id="4" language="java" name="es.unican.is2.practica5.Cliente" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="249" x="649" y="92"/>    
+    <position height="-1" width="-1" x="927" y="389"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -40,7 +40,7 @@
   </class>  
   <class id="5" language="java" name="es.unican.is2.practica5.Tarjeta" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/Tarjeta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="240" x="235" y="375"/>    
+    <position height="-1" width="-1" x="357" y="408"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -58,7 +58,7 @@
   </class>  
   <class id="7" language="java" name="es.unican.is2.practica5.Cuenta" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/Cuenta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="135" x="649" y="375"/>    
+    <position height="-1" width="-1" x="652" y="383"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -67,7 +67,7 @@
   </class>  
   <class id="8" language="java" name="es.unican.is2.practica5.Movimiento" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/Movimiento.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="148" x="-46" y="923"/>    
+    <position height="-1" width="-1" x="187" y="920"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -76,7 +76,7 @@
   </class>  
   <class id="9" language="java" name="es.unican.is2.practica5.Valor" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/Valor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="185" x="793" y="923"/>    
+    <position height="-1" width="-1" x="884" y="913"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -85,7 +85,7 @@
   </class>  
   <class id="10" language="java" name="es.unican.is2.practica5.Debito" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/Debito.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="351" y="691"/>    
+    <position height="-1" width="-1" x="355" y="659"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -95,75 +95,97 @@
   <class id="11" language="java" name="es.unican.is2.practica5.saldoInsuficienteException" project="practica5" 
     file="/practica5/src/main/java/es/unican/is2/practica5/saldoInsuficienteException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="81" width="190" x="334" y="92"/>    
+    <position height="-1" width="-1" x="489" y="262"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="12">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="13" name="mMovimientosMensuales">        
-        <position height="18" width="127" x="-106" y="856"/>      
-      </attribute>      
-      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="15">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="16" name="mMovimientos"/>      
-      <multiplicity id="17" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="18">    
+  <generalization id="12">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="13">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="19" name="mCuentaAsociada"/>      
-      <multiplicity id="20" minimum="0" maximum="1"/>    
+      <attribute id="14" name="mCuentaAsociada">        
+        <position height="18" width="98" x="462" y="515"/>      
+      </attribute>      
+      <multiplicity id="15" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
-  <generalization id="22">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="23">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="24" name="Cuentas"/>      
-      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="26">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="27">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
-  <association id="28">    
+  <association id="16">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="29" name="valores"/>      
-      <multiplicity id="30" minimum="0" maximum="2147483647"/>    
+      <attribute id="17" name="valores">        
+        <position height="0" width="0" x="-1" y="-122"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-1" y="-122"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="31">    
+  <association id="19">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="20" name="Cuentas">        
+        <position height="0" width="0" x="-64" y="-50"/>      
+      </attribute>      
+      <multiplicity id="21" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-64" y="-50"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="23">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="24">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="32" name="mhistoricoMovimientos"/>      
-      <multiplicity id="33" minimum="0" maximum="2147483647"/>    
+      <attribute id="25" name="mMovimientosMensuales">        
+        <position height="18" width="127" x="156" y="771"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="159" y="-124"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="28" name="mhistoricoMovimientos">        
+        <position height="0" width="0" x="159" y="-124"/>      
+      </attribute>      
+      <multiplicity id="29" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="159" y="-124"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="31">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="32" name="mMovimientos">        
+        <position height="0" width="0" x="159" y="-124"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="159" y="-124"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  

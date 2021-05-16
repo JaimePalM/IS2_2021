@@ -5,13 +5,11 @@ import java.time.LocalDate;
 public abstract class Tarjeta {
 	protected String numero, titular;		
 	protected CuentaAhorro cuentaAsociada;
-	protected LocalDate fechaDeCaducidad;
 	
-	public Tarjeta(String numero, String titular, CuentaAhorro c, LocalDate f) { // WMC: +1  CCog: +0
+	public Tarjeta(String numero, String titular, CuentaAhorro c) { // WMC: +1  CCog: +0
 		this.numero = numero;
 		this.titular = titular;
 		this.cuentaAsociada = c;
-		this.fechaDeCaducidad = f;
 	}
 
 	/**
@@ -34,10 +32,6 @@ public abstract class Tarjeta {
 
 	public CuentaAhorro getCuentaAsociada() { // WMC: +1  CCog: +0
 		return cuentaAsociada;
-	}
-
-	public LocalDate getCaducidad() { // WMC: +1  CCog: +0
-		return this.fechaDeCaducidad;
 	}
 	
 }
