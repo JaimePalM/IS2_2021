@@ -9,10 +9,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import es.unican.is2.practica5refactor.CuentaAhorro;
-import es.unican.is2.practica5refactor.DatoErroneoException;
-import es.unican.is2.practica5refactor.Movimiento;
-import es.unican.is2.practica5refactor.SaldoInsuficienteException;
+import es.unican.is2.practica5refactorsonar.CuentaAhorro;
+import es.unican.is2.practica5refactorsonar.DatoErroneoException;
+import es.unican.is2.practica5refactorsonar.Movimiento;
+import es.unican.is2.practica5refactorsonar.SaldoInsuficienteException;
 
 
 public class CuentaAhorroTest {

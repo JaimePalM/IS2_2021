@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.unican.is2</groupId>
-	<artifactId>practica5</artifactId>
+	<artifactId>practica5RefactorSonar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
@@ -38,8 +38,8 @@
 		</plugins>
 	</build>
 	<properties>
-		<sonar.projectKey>JesusyJaime-Practica5-SinRefactorizar</sonar.projectKey>
-		<sonar.projectName>JesusyJaime-Practica5-SinRefactorizar</sonar.projectName>
+		<sonar.projectKey>JesusyJaime-Practica5-ConRefactorizarSonar</sonar.projectKey>
+		<sonar.projectName>JesusyJaime-Practica5-ConRefactorizarSonar</sonar.projectName>
 		<sonar.scm.disabled>true</sonar.scm.disabled>
 	</properties>
 

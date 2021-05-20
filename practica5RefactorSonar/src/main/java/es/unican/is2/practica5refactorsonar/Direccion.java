@@ -1,9 +1,9 @@
-package es.unican.is2.practica5;
+package es.unican.is2.practica5refactorsonar;
 
 public class Direccion {
-	public String calle;
-	public String zip;
-	public String localidad;
+	protected String calle;
+	protected String zip;
+	protected String localidad;
 
 	public Direccion(String calle, String zip, String localidad) { // WMC: +1  CCog: 0
 		this.calle = calle;

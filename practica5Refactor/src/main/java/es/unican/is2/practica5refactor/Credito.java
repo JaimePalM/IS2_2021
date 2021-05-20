@@ -1,5 +1,6 @@
-package es.unican.is2.practica5;
+package es.unican.is2.practica5refactor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
@@ -76,6 +77,10 @@ public class Credito extends Tarjeta {
 
 	public List<Movimiento> getMovimientosUltimoMes() { // WMC: +1  CCog: +0
 		return movimientosMensuales;
+	}
+	
+	public LocalDate getCaducidadCredito() { // WMC: +1  CCog: +0
+		return this.cuentaAsociada.getCaducidadCredito();
 	}
 	
 	public List<Movimiento> getMovimientos() { // WMC: +1  CCog: +0

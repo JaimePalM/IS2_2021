@@ -1,4 +1,4 @@
-package es.unican.is2.practica5;
+package es.unican.is2.practica5refactorsonar;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,14 +8,14 @@ import java.util.List;
 public class CuentaAhorro extends Cuenta {
 
 	private static final int LIMITE_DEBITO = 1000;
-	private LocalDate mFechaDeCaducidadTarjetaDebito;
-	private LocalDate mFechaDeCaducidadTarjetaCredito;
+	private LocalDate fechaDeCaducidadTarjetaDebito;
+	private LocalDate fechaDeCaducidadTarjetaCredito;
 	private List<Movimiento> movimientos;
 	
 	public CuentaAhorro(String numCuenta, LocalDate date, LocalDate date2) { // WMC: +1  CCog: +0
 		super(numCuenta);
-		this.mFechaDeCaducidadTarjetaDebito = date;
-		this.mFechaDeCaducidadTarjetaCredito = date2;
+		this.fechaDeCaducidadTarjetaDebito = date;
+		this.fechaDeCaducidadTarjetaCredito = date2;
 		movimientos = new LinkedList<Movimiento>();
 	}
 
@@ -42,7 +42,7 @@ public class CuentaAhorro extends Cuenta {
 	public double getSaldo() { // WMC: +1  CCog: +0
 		double r = 0.0;
 		for (int i = 0; i < this.movimientos.size(); i++) { // WMC: +1  CCog: +1
-			Movimiento m = (Movimiento) movimientos.get(i);
+			Movimiento m = movimientos.get(i);
 			r += m.getImporte();
 		}
 		return r;
@@ -57,11 +57,11 @@ public class CuentaAhorro extends Cuenta {
 	}
 	
 	public LocalDate getCaducidadDebito() { // WMC: +1  CCog: +0
-		return this.mFechaDeCaducidadTarjetaDebito;
+		return this.fechaDeCaducidadTarjetaDebito;
 	}
 
 	public LocalDate getCaducidadCredito() { // WMC: +1  CCog: +0
-		return this.mFechaDeCaducidadTarjetaCredito;
+		return this.fechaDeCaducidadTarjetaCredito;
 	}
 
 	public double getLimiteDebito() { // WMC: +1  CCog: +0

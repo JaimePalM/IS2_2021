@@ -1,4 +1,4 @@
-package es.unican.is2.practica5;
+package es.unican.is2.practica5refactorsonar;
 
 import java.time.LocalDateTime;
 
@@ -7,7 +7,7 @@ public class Movimiento {
 	private LocalDateTime fecha;
 	private double importe;
 		
-	public Movimiento() {}
+	public Movimiento() {} // WMC: +1  CCog: +0
 	
 	public Movimiento(String concepto, LocalDateTime fecha, double importe) { // WMC: +1  CCog: +0
 		this.concepto = concepto;

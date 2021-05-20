@@ -1,4 +1,6 @@
-package es.unican.is2.practica5;
+package es.unican.is2.practica5refactor;
+
+import java.time.LocalDate;
 
 public class Debito extends Tarjeta {
 	
@@ -25,6 +27,10 @@ public class Debito extends Tarjeta {
 		}
 		this.cuentaAsociada.retirar("Compra en : " + datos, cantidadAPagar);
 		saldoDiarioDisponible-=cantidadAPagar;
+	}
+	
+	public LocalDate getCaducidadDebito() { // WMC: +1  CCog: +0
+		return this.cuentaAsociada.getCaducidadDebito();
 	}
 	
 	/**

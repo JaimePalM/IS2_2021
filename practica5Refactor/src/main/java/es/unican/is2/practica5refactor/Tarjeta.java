@@ -1,6 +1,4 @@
-package es.unican.is2.practica5;
-
-import java.time.LocalDate;
+package es.unican.is2.practica5refactor;
 
 public abstract class Tarjeta {
 	protected String numero, titular;		

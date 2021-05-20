@@ -1,4 +1,4 @@
-package es.unican.is2.practica5;
+package es.unican.is2.practica5refactorsonar;
 
 @SuppressWarnings("serial")
 public class SaldoInsuficienteException extends RuntimeException {

@@ -8,8 +8,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.unican.is2.practica5refactor.CuentaValores;
-import es.unican.is2.practica5refactor.Valor;
+import es.unican.is2.practica5refactorsonar.CuentaValores;
+import es.unican.is2.practica5refactorsonar.Valor;
 
 public class CuentaValoresTest {
 	private CuentaValores sut;

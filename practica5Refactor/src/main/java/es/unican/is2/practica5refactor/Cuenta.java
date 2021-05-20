@@ -1,4 +1,4 @@
-package es.unican.is2.practica5;
+package es.unican.is2.practica5refactor;
 
 public abstract class Cuenta {
 	
@@ -12,12 +12,12 @@ public abstract class Cuenta {
 		return numCuenta;
 	}
 
-	double getSaldoCuenta() {
+	double getSaldoCuenta() { // WMC: +1 CCog: +0
 		double total = 0.0;
-		if (this instanceof CuentaAhorro) { // WMC: +1  CCog: +2	
+		if (this instanceof CuentaAhorro) { // WMC: +1  CCog: +1
 			total += ((CuentaAhorro) this).getSaldo(); 
-		} else if (this instanceof CuentaValores)  { // WMC: +1  CCog: +3
-			for (Valor v: ((CuentaValores) this).getValores()) { // WMC: +1  // CCog: +4 
+		} else if (this instanceof CuentaValores)  { // WMC: +1  CCog: +2
+			for (Valor v: ((CuentaValores) this).getValores()) { // WMC: +1  // CCog: +3 
 				total += v.getCotizacionActual()*v.getNumValores();
 			}
 		}
